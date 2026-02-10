@@ -40,7 +40,7 @@ python triangle_pixelate.py input_image output_image [triangle_size] [--dominant
 Example:
 
 ```bash
-python triangle_pixelate.py japan.jpg japan-transformated.png 100 --dominant
+python triangle_pixelate.py japan.jpg japan-transformated.png 100
 ```
 
 ## License

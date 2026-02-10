@@ -13,12 +13,13 @@ def triangle_grid(image_size, triangle_size):
     
     # Number of rows and columns needed
     rows = int(np.ceil(height / h)) + 1
-    cols = int(np.ceil(width / (triangle_size / 2))) + 1
+    cols = int(np.ceil(width / (triangle_size / 2))) + 2
     
     for row in range(rows):
         y_base = row * h
         for col in range(cols):
-            x_base = col * (triangle_size / 2)
+            # Start grid slightly before x=0 to ensure proper coverage
+            x_base = (col - 1) * (triangle_size / 2)
             
             # Alternate triangles to create a hexagonal grid
             if (row + col) % 2 == 0:
