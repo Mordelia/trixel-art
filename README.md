@@ -7,6 +7,7 @@ This Python tool transforms any image into a mosaic of equilateral triangles, cr
 - Adjustable triangle size
 - Option to use the dominant color (most frequent) or the average color for each triangle
 - Option to use a grayscale
+- Option to use many CPU cores
 
 ## Example
 Below is an example using the file `japan.jpg` with a triangle size of 100:
@@ -34,7 +35,7 @@ pip install numpy pillow
 Run the script:
 
 ```bash
-python triangle_pixelate.py input_image output_image [triangle_size] [--dominant] [--grayscale]
+python triangle_pixelate.py input_image output_image [triangle_size] [--dominant] [--grayscale] [--workers=N]
 ```
 
 - `input_image`: Path to the input image
@@ -42,11 +43,12 @@ python triangle_pixelate.py input_image output_image [triangle_size] [--dominant
 - `triangle_size`: Size of the triangles (default: 20)
 - `--dominant`: Use the most frequent color instead of the mean
 - `--grayscale`: Output in grayscale (triangles filled with gray values)
+- `--workers=N`: Number of worker processes to use (e.g. `--workers=4`)
 
 Example:
 
 ```bash
-python triangle_pixelate.py japan.jpg japan-transformated.png 100
+python triangle_pixelate.py japan.jpg japan-transformated.png 100 --workers=4
 ```
 
 ## License
